@@ -200,6 +200,27 @@ li:before {
   cursor: pointer;
 }
 
+.author-profile {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.author-image {
+  width: 240px;
+  height: 240px;
+  border-radius: 100%;
+  object-fit: cover;
+  border: 3px solid var(--color-border);
+  margin-bottom: var(--spacing-md);
+}
+
+.author-name {
+  font-size: 1.3rem;
+  color: var(--color-text-primary);
+  font-weight: bold;
+  margin: 0;
+}
+
 .nav-links {
   display: flex;
   gap: 30px;
