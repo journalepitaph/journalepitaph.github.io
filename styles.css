@@ -215,8 +215,8 @@ li:before {
 }
 
 .author-image--rectangle {
-  width: 420px;
-  height: 240px;
+  width: 100%;
+  height: auto;
   border-radius: 1.2rem;
   object-fit: cover;
   border: 3px solid var(--color-border);
