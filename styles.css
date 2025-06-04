@@ -554,3 +554,206 @@ li:before {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
+
+.issue-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.issue-actions .action-button {
+  margin: 0;
+}
+
+/* ===== MOBILE RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  /* Show hamburger menu on mobile */
+  .hamburger {
+    display: block !important;
+  }
+
+  /* Hide normal nav links on mobile */
+  .nav-links {
+    position: fixed;
+    top: -280px;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    background-color: var(--color-bg-secondary);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px 0;
+    gap: 8px;
+    transition: top 0.3s ease;
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+  }
+
+  /* Show nav links when menu is toggled */
+  .menu-toggle:checked ~ .nav-links {
+    top: 72px;
+  }
+
+  /* Style nav links for mobile */
+  .nav-links a {
+    font-size: 1.1rem;
+    padding: 8px 20px;
+    color: var(--color-text-primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 90%;
+    text-align: center;
+    border-radius: 4px;
+    margin: 2px 0;
+  }
+
+  .nav-links a:hover {
+    color: var(--color-text-hover);
+    background-color: rgba(59, 50, 40, 0.3);
+  }
+
+  /* Navbar adjustments for mobile */
+  .navbar {
+    padding: 15px var(--spacing-md);
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  .nav-logo {
+    height: 28px;
+  }
+
+  /* Hero section mobile adjustments */
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .buttons-container {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .action-button {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    padding: 16px 24px;
+    font-size: 1rem;
+  }
+
+  /* Page content mobile adjustments */
+  .container {
+    padding: 0 16px;
+  }
+
+  .page {
+    padding: 60px 0 80px;
+  }
+
+  .page h2 {
+    font-size: 1.6rem;
+  }
+
+  .page h3 {
+    font-size: 1.3rem;
+  }
+
+  .page p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Author profile mobile adjustments */
+  .author-image {
+    width: 180px;
+    height: 180px;
+  }
+
+  .author-name {
+    font-size: 1.1rem;
+  }
+
+  /* List items mobile adjustments */
+  li,
+  li > a {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    margin-top: 20px;
+  }
+
+  /* Issue page mobile adjustments */
+  .issue-actions {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .issue-actions .action-button {
+    width: 100%;
+    max-width: 280px;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 12px 16px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .nav-logo {
+    height: 24px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .action-button {
+    padding: 14px 20px;
+    font-size: 0.95rem;
+    max-width: 260px;
+  }
+
+  .page h2 {
+    font-size: 1.4rem;
+  }
+
+  .page h3 {
+    font-size: 1.2rem;
+  }
+
+  .page p {
+    font-size: 0.95rem;
+  }
+
+  .author-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+}
