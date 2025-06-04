@@ -20,6 +20,19 @@ const server = http.createServer((req, res) => {
     case ".js":
       contentType = "text/javascript";
       break;
+    case ".pdf":
+      contentType = "application/pdf";
+      break;
+    case ".png":
+      contentType = "image/png";
+      break;
+    case ".jpg":
+    case ".jpeg":
+      contentType = "image/jpeg";
+      break;
+    case ".json":
+      contentType = "application/json";
+      break;
   }
 
   fs.stat(filePath, (err, stats) => {
@@ -45,8 +58,18 @@ const server = http.createServer((req, res) => {
           res.writeHead(500);
           res.end(`Server Error: ${err.code}`);
         } else {
-          res.writeHead(200, { "Content-Type": contentType });
-          res.end(content, "utf-8");
+          // Set appropriate headers for PDF files
+          if (extname === ".pdf") {
+            res.writeHead(200, {
+              "Content-Type": contentType,
+              "Content-Disposition": "inline",
+              "Cache-Control": "public, max-age=3600"
+            });
+            res.end(content);
+          } else {
+            res.writeHead(200, { "Content-Type": contentType });
+            res.end(content, "utf-8");
+          }
         }
       });
     }
